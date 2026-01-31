@@ -82,7 +82,8 @@ with col_graf1:
             labels={'usd': 'Média salarial anual (USD)', 'cargo': ''}
         )
         grafico_cargos.update_layout(title_x=0.1, yaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(grafico_cargos, use_container_width=True)
+        st.plotly_chart(grafico_cargos, width="content")
+
     else:
         st.warning("Nenhum dado para exibir no gráfico de cargos.")
 
@@ -96,7 +97,8 @@ with col_graf2:
             labels={'usd': 'Faixa salarial (USD)', 'count': ''}
         )
         grafico_hist.update_layout(title_x=0.1)
-        st.plotly_chart(grafico_hist, use_container_width=True)
+        st.plotly_chart(grafico_hist, width="content")
+
     else:
         st.warning("Nenhum dado para exibir no gráfico de distribuição.")
 
@@ -115,7 +117,8 @@ with col_graf3:
         )
         grafico_remoto.update_traces(textinfo='percent+label')
         grafico_remoto.update_layout(title_x=0.1)
-        st.plotly_chart(grafico_remoto, use_container_width=True)
+        st.plotly_chart(grafico_remoto, width="content")
+
     else:
         st.warning("Nenhum dado para exibir no gráfico dos tipos de trabalho.")
 
@@ -130,11 +133,13 @@ with col_graf4:
             title='Salário médio de Cientista de Dados por país',
             labels={'usd': 'Salário médio (USD)', 'residencia_iso3': 'País'})
         grafico_paises.update_layout(title_x=0.1)
-        st.plotly_chart(grafico_paises, use_container_width=True)
+        st.plotly_chart(grafico_paises, width="content")
+
     else:
         st.warning("Nenhum dado para exibir no gráfico de países.")
 
 # --- Tabela de Dados Detalhados ---
 st.subheader("Dados Detalhados")
 st.dataframe(df_filtrado)
+     
      
